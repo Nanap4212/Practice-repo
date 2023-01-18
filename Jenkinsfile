@@ -17,5 +17,10 @@ pipeline {
         sh 'systemctl start nginx'
       }
     }
+    stage ('running processes') {
+      steps {
+        sh 'top'
+      }
+    }
   }
 }
