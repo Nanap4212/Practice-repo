@@ -4,7 +4,8 @@ pipeline {
   stages {
     stage ('Start nginx') {
       steps {
-        sh 'apt install nginx -y'
+        sh 'sudo apt update -y'
+        sh 'sudo apt install nginx -y'
       }
     }  
     stage ('index') {
@@ -14,12 +15,12 @@ pipeline {
     }
     stage ('start nginx') {
       steps {
-        sh 'systemctl start nginx'
+        sh 'sudo systemctl start nginx'
       }
     }
     stage ('running processes') {
       steps {
-        sh 'top'
+        sh 'sudo stop'
       }
     }
   }
